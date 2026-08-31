@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Contact Form</title>
+  <style>
+    /* Reset & background */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #4A154B 0%, #2E0854 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Form Container */
+    .form-card {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 420px;
+      border-top: 6px solid #FF7A00; /* Orange top accent */
+    }
+
+    .form-card h2 {
+      margin-top: 0;
+      color: #3A0CA3; /* Vibrant Purple */
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    /* Labels & Inputs */
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333333;
+      font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 2px solid #E0E0E0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+
+    /* Active input highlight (Purple focus ring) */
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #7209B7;
+      box-shadow: 0 0 0 3px rgba(114, 9, 183, 0.15);
+    }
+
+    /* Submit Button (Orange CTA) */
+    button[type="submit"] {
+      width: 100%;
+      background-color: #FF7A00;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    /* Hover & Active States */
+    button[type="submit"]:hover {
+      background-color: #E06C00;
+    }
+
+    button[type="submit"]:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-card">
+    <h2>Contact Us</h2>
+
+    <form action="/submit-form" method="POST">
+
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Jane Doe" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+
+      <label for="subject">Subject</label>
+      <select id="subject" name="subject">
+        <option value="general">General Inquiry</option>
+        <option value="support">Technical Support</option>
+        <option value="feedback">Feedback</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+  </div>
+
+</body>
+</html>
